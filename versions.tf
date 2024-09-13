@@ -46,3 +46,18 @@ terraform {
     module_name = "blueprints/terraform/terraform-google-load-balanced-vms/v0.5.0"
   }
 }
+
+provider "google" {
+  credentials = file("service-key.json")
+  project     = var.project_id
+  region      = var.region
+  zone        = var.zone
+}
+
+
+provider "google-beta" {
+  credentials = file("service-key.json")
+  project     = var.project_id
+  region      = var.region
+  zone        = var.zone
+}
